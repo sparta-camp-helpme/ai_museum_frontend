@@ -31,8 +31,6 @@ async function handleSignin(){
 }
 
 
-
-
 async function handleLogin(){
     // console.log("handle login")
 
@@ -52,16 +50,12 @@ async function handleLogin(){
     }
     )
 
-
-
     response_json = await response.json()
     // console.log(response_json.access)
 
-    
     if (response.status ==200){
         localStorage.setItem("access", response_json.access)
         localStorage.setItem("refresh", response_json.refresh)
-
 
         const base64Url = response_json.access.split('.')[1];
         const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
@@ -70,9 +64,47 @@ async function handleLogin(){
         }).join(''));
 
         localStorage.setItem("payload", jsonPayload);
-        // window.location.replace(`${frontend_base_url}/`);
+        window.location.replace(`${frontend_base_url}/mainpage.html`);
     }else{
         alert(response.status)
     }
 
+}
+
+
+async function handleTransfer(){
+    
+    const image = document.getElementById("article_image").value
+    const content = document.getElementById('article_content').value
+
+    postArticle(content, image)
+}
+
+
+async function postArticle(content, image){
+
+
+    const articleData = {
+        content : content,
+        image : image,
+    }
+
+    const response = await fetch(`${backend_base_url}/article/`,{
+        method:'POST',
+        headers:{
+            Accept:"application/json",
+            'Content-type':'application/json'
+        },
+        body:JSON.stringify(articleData)
+    }
+    )
+
+    response_json = await response.json()
+    console.log(response_json)
+    if (response.status ==200){
+
+        window.location.replace(`${frontend_base_url}/mainpage.html`);
+    }else{
+        alert(response.status)
+    }
 }
