@@ -4,9 +4,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="api.js"></script>
+    <script src="index.js"></script>
     <title>Document</title>
 </head>
 <body>
-    
+    <h1>Hello</h1>
+    <h2 id="username"></h2>
+    <h2>반갑습니다</h2>
+    <button type="button" onclick="location.href='/mainpage.html'">
+    게시글 작성하기</button>
+    <button type="button" id="logout" onclick="handleLogout">
+    로그아웃</button>
+    <ol id="article"></ol>
 </body>
 </html>

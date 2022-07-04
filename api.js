@@ -64,7 +64,7 @@ async function handleLogin(){
         }).join(''));
 
         localStorage.setItem("payload", jsonPayload);
-        window.location.replace(`${frontend_base_url}/mainpage.html`);
+        window.location.replace(`${frontend_base_url}/index.html`);
     }else{
         alert(response.status)
     }
@@ -74,37 +74,64 @@ async function handleLogin(){
 
 async function handleTransfer(){
     
-    const image = document.getElementById("article_image").value
+    const result_img = document.getElementById("article_image").files[0]
     const content = document.getElementById('article_content').value
 
-    postArticle(content, image)
-}
+    const formdata = new FormData();
 
-
-async function postArticle(content, image){
-
-
-    const articleData = {
-        content : content,
-        image : image,
-    }
+    formdata.append('result_img', result_img)
+    formdata.append('content', content)
 
     const response = await fetch(`${backend_base_url}/article/`,{
         method:'POST',
-        headers:{
-            Accept:"application/json",
-            'Content-type':'application/json'
-        },
-        body:JSON.stringify(articleData)
+        body:formdata
+    })
+    if (response.status == 200){
+        alert("글작성 완료")
+        window.location.replace(`${frontend_base_url}/`);
     }
-    )
-
-    response_json = await response.json()
-    console.log(response_json)
-    if (response.status ==200){
-
-        window.location.replace(`${frontend_base_url}/mainpage.html`);
-    }else{
-        alert(response.status)
+    else{
+        alert(response.data)
     }
+    // postArticle(content, result_img)
 }
+
+
+// async function postArticle(content, result_img){
+
+
+//     const articleData = {
+//         content : content,
+//         result_img : result_img,
+//     }
+
+//     const response = await fetch(`${backend_base_url}/article/`,{
+//         method:'POST',
+//         headers:{
+//             Authorization: "Bearer " + localStorage.getItem("access"),
+//             Accept:"application/json",
+//             'Content-type':'application/json'
+//         },
+//         body:JSON.stringify(articleData)
+//     }
+//     )
+
+//     response_json = await response.json()
+//     console.log(response_json)
+//     if (response.status ==200){
+
+//         window.location.replace(`${frontend_base_url}/mainpage.html`);
+//     }else{
+//         alert(response.status)
+//     }
+// }
+
+// async function getArticles(){
+//     const response = await fetch(`${backend_base_url}/article/` ,{
+//         method:'GET',
+//     })
+
+//     response_json = await response.json()
+//     return response_json
+// }
+

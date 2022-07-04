@@ -5,10 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="api.js"></script>
+    <link rel="stylesheet" href="../style.css" />
     <title>Document</title>
 </head>
 <body>
-    <h1>Article Create</h1>
+    <form class="upload-form">
+        <h1>Article Create</h1>
     <div>
         <div>
             <input type="file" name="" id="article_image" />
@@ -17,9 +19,11 @@
             <textarea name="" id="article_content" cols="30" rows="10"></textarea>
         </div>
         <div>
-            <button type="button" onclick="handleTransfer()">유화 제작</button>
+            <button class="btn-transfer" type="button" onclick="handleTransfer()">유화 제작</button>
         </div>
     </div>
+    </form>
+    
     <!-- <main class="form-main">
         <form>
             <div class="form-floating">
