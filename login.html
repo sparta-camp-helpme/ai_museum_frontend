@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+        crossorigin="anonymous">
+    </script>   
+    <script src="api.js"></script>
+    <link rel="stylesheet" href="login.css" />
+
+</head>
+
+<body>
+    <h1 class="starttext" id="starttext"></h1>
+    <button class="startbutton" id="startbutton">click here</button>
+    <div><p class="boxtext" id="boxtext">AI MUSEUM</p></div>
+        <div class="loginbox" id="loginbox">
+            <input class="login_input" id="nameinput" name="username" type="id" onfocus="this.style.color='white';" placeholder="아이디">
+            <input class="login_input" id="pwinput" name="password" type="password" onfocus="this.style.color='white';" placeholder="비밀번호">
+            <div class="buttonwrap">
+                <button type="submit" class="login_submit" id="login_submit" onclick="handlelogin()"><b>로그인</b></button>
+                <button class="joinbutton"><b>회원가입</b></button>
+            </div>
+        </div>
+
+        <script src="login.js"></script>
+</body>
+
+</html>
