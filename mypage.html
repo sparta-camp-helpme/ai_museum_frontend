@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyPage</title>
+    <link rel="stylesheet" href="mypage.css" />
+    <script src="api.js"></script>
+</head>
+<body>
+    <header>
+        <div class="headerwrap">
+            <div><h1 class="headertext">AI MUSEUM</h1></div>
+            <div class="buttons">
+                <button type="button" id="loginout" class="logoutbutton" onclick="handleLogout()">
+                Logout
+                </button>
+                <button type="button" id="mypagebutton" class="mypagebutton" onclick="gomypage()">
+                    MyPage
+                </button>
+            </div>
+        </div>
+    </header>
+    <hr>
+    <p class="mymuseum">{𝕄𝕐 𝕄𝕌𝕊𝔼𝕌𝕄}</p>
+    <div class="mypagedivs">
+        <div class="mypagediv">
+            <div><img id="picture" class="picture" src="#"/></div>
+            <div><h6 class="article">여기에 게시글 내용이 들어갑니다</h6></div>
+        </div>
+        <div class="mypagediv">
+            <div><img id="picture" class="picture" src="#"/></div>
+            <div><h6 class="article">여기에 게시글 내용이 들어갑니다</h6></div>
+        </div>
+        <div class="mypagediv">
+            <div><img id="picture" class="picture" src="#"/></div>
+            <div><h6 class="article">여기에 게시글 내용이 들어갑니다</h6></div>
+        </div>
+    </div>
+</body>
+</html>
