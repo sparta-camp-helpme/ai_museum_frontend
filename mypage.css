@@ -1,0 +1,81 @@
+@font-face {
+    font-family: 'HSBombaram';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/HSBombaram.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    }
+
+    * {
+        font-family: 'HSBombaram';
+    }
+
+body {
+        background: linear-gradient(0.25turn, #32437E, #202A4A, #32437E);
+}
+
+.headertext {
+    font-size: 50px;
+    color: white;
+    margin-left: 50px;
+}
+
+.buttons {
+    position: absolute;
+    right: 60px;
+    top: 47px;
+}
+
+.logoutbutton {
+    border-style: none; 
+    background-color: rgba( 255, 255, 255, 0 );
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.mypagebutton {
+    border-style: none; 
+    background-color: rgba( 255, 255, 255, 0 );
+    color: white;
+    font-size: 20px;
+    margin-right: 50px;
+    cursor: pointer;
+}
+
+.mymuseum {
+    font-size: 50px;
+    text-align: center;
+    color: white;
+}
+
+.picture {
+
+    width: 300px;
+    height: 500px;
+    border-style: ridge;
+    border-color: navy;
+    border-width:20px 20px 20px 20px;
+}
+
+.article {
+    background-color:rgba( 255, 255, 255, 0.7 );
+    width: 300px;
+    height: 100px;
+    font-size: 20px;
+    margin: 5px 10px 10px 10px;
+    border-style: double;
+    border-color: black;
+    border-width:10px 10px 10px 10px;
+
+}
+
+.mypagedivs {
+    display: flex;
+    flex-direction: row;
+    justify-content:center;
+    align-items: center;
+}
+
+.mypagediv {
+    margin-left: 30px;
+}
