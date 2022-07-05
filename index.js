@@ -1,3 +1,15 @@
+$(document).ready(function() {
+    $('#btn-transfer').hide();
+    $('#preview').hide();
+
+    $("#article_image").change(function () {
+        readURL(this);
+        $("#preview").show();
+        $("#btn-transfer").show();
+        $('#choosephoto').hide();
+    });
+});
+
 
 window.onload =async function loadArticles(){
     articles = await getArticles()
@@ -32,7 +44,8 @@ async function modal() {
 const openButton = document.getElementById("modalclick");
 const modal = document.querySelector(".modal");
 const overlay = modal.querySelector(".modal__overlay");
-const closeBtn = modal.querySelector("button");
+const closeBtn = modal.querySelector(".xbutton");
+const closeBtn2 = modal.querySelector("button");
 const openModal = () => {
     modal.classList.remove("hidden");
 }
@@ -42,21 +55,18 @@ const closeModal = () => {
 overlay.addEventListener("click", closeModal);
 closeBtn.addEventListener("click", closeModal);
 openButton.addEventListener("click", openModal);
+closeBtn2.addEventListener("click", closeModal);
 }
 
-$(document).ready(function() {
-    $('#submitphoto').hide();
-    $('#preview').hide();
-
-    $("#choosephoto").click(function () {
-        $("#choosephoto").hide()
-
-    });
-
-    $("#pr_photo").change(function () {
-        // pr_photo가 값이 바뀌면 아래와 같이 체인지
-        readURL(this);
-        $("#preview").show();
-        $("#submitphoto").show();
-    });
-});
+// 이미지 미리보기
+    function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                document.getElementById('preview').src = e.target.result;
+            };
+            reader.readAsDataURL(input.files[0]);
+        } else {
+            document.getElementById('preview').src = "";
+        }
+    }
