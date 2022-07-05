@@ -1,0 +1,142 @@
+html,
+body {
+  position: relative;
+  height: 100%;
+}
+
+body {
+  background: linear-gradient(0.25turn, #32437E, #202A4A, #32437E);
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  color: #000;
+  margin: 0;
+  padding: 0;
+
+}
+
+@font-face {
+    font-family: 'HSBombaram';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/HSBombaram.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    }
+
+    * {
+        font-family: 'HSBombaram';
+    }
+
+
+
+.headertext {
+    font-size: 50px;
+    color: white;
+    margin-left: 50px;
+}
+
+.buttons {
+    position: absolute;
+    right: 60px;
+    top: 15px;
+}
+
+.logoutbutton {
+    border-style: none; 
+    background-color: rgba( 255, 255, 255, 0 );
+    color: white;
+    font-size: 20px;
+
+}
+
+.mypagebutton {
+    border-style: none; 
+    background-color: rgba( 255, 255, 255, 0 );
+    color: white;
+    font-size: 20px;
+    margin-right: 50px;
+}
+
+.swiper {
+  width: 100%;
+  height: 800px;
+}
+
+.swiper-slide {
+
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  border-style: ridge;
+  border-color: navy;
+  border-width:20px 20px 0px 20px;
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+
+}
+
+.modal {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal__overlay {
+    background-color : rgba(0,0,0,0.6);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+.modal__content {
+    background-color: white;
+    padding: 50px 100px;
+    text-align : center;
+    position: relative;
+    border-radius: 10px;
+    width: 500px;
+    box-shadow: 0px 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23)
+}
+
+.hidden {
+    display: none;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 800px;
+  object-fit: cover;
+}
+
+.submitphoto {
+    display: flex;
+    justify-content:center;
+    border: 2px solid rgb(126, 169, 164);
+    font-size: 20px;
+    padding: 2px;
+    margin: 10px 15px 0px 0px;
+}
+
+.preview {
+    width: 200px;
+    height: 150px;
+    display: flex;
+    justify-content:center;
+    margin-right: 20px;
+} 
+
