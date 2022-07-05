@@ -1,5 +1,6 @@
 const backend_base_url = "http://127.0.0.1:8000"
 const frontend_base_url = "http://127.0.0.1:5500"
+
 // #backend와 frontend의 각각 baseurl 설정
 
 async function handlejoin() {
@@ -62,6 +63,7 @@ async function handlelogin() {
     if (response.status == 200) {
         localStorage.setItem("access", response_json.access)
         // #localstorage에 access란 변수에 담겨온 access값을 받아와서 저장
+
         localStorage.setItem("refresh", response_json.refresh)
 
         const base64Url = response_json.access.split('.')[1];
@@ -69,6 +71,7 @@ async function handlelogin() {
         const jsonPayload = decodeURIComponent(atob(base64).split('').map(function(c) {
             return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
         }).join(''));
+
         // #jwt사이트에서 바꿔주는 것처럼 우리가 토큰값을 알기 쉽게 꺼내올 수 있도록 하는 로직
 
 
@@ -80,3 +83,68 @@ async function handlelogin() {
     }
 
 }
+
+
+async function handleTransfer(){
+    
+    const result_img = document.getElementById("article_image").files[0]
+    const content = document.getElementById('article_content').value
+
+    const formdata = new FormData();
+
+    formdata.append('result_img', result_img)
+    formdata.append('content', content)
+
+    const response = await fetch(`${backend_base_url}/article/`,{
+        method:'POST',
+        body:formdata
+    })
+    if (response.status == 200){
+        alert("글작성 완료")
+        window.location.replace(`${frontend_base_url}/`);
+    }
+    else{
+        alert(response.data)
+    }
+    // postArticle(content, result_img)
+}
+
+
+// async function postArticle(content, result_img){
+
+
+//     const articleData = {
+//         content : content,
+//         result_img : result_img,
+//     }
+
+//     const response = await fetch(`${backend_base_url}/article/`,{
+//         method:'POST',
+//         headers:{
+//             Authorization: "Bearer " + localStorage.getItem("access"),
+//             Accept:"application/json",
+//             'Content-type':'application/json'
+//         },
+//         body:JSON.stringify(articleData)
+//     }
+//     )
+
+//     response_json = await response.json()
+//     console.log(response_json)
+//     if (response.status ==200){
+
+//         window.location.replace(`${frontend_base_url}/mainpage.html`);
+//     }else{
+//         alert(response.status)
+//     }
+// }
+
+// async function getArticles(){
+//     const response = await fetch(`${backend_base_url}/article/` ,{
+//         method:'GET',
+//     })
+
+//     response_json = await response.json()
+//     return response_json
+// }
+
