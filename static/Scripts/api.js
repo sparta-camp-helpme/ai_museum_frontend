@@ -99,20 +99,24 @@ async function gomypage(){
 
 async function handleTransfer(){
     
-    const result_img = document.getElementById("article_image").files[0]
+    const image = document.getElementById("article_image").files[0]
     const content = document.getElementById('article_content').value
 
     const formdata = new FormData();
 
-    formdata.append('result_img', result_img)
+    formdata.append('image', image)
     formdata.append('content', content)
 
     const response = await fetch(`${backend_base_url}/article/`,{
+        headers:{
+        Authorization: "Bearer " + localStorage.getItem("access"),
+        Accept:"application/json"
+        },
         method:'POST',
         body:formdata
     })
     if (response.status == 200){
-        alert("글작성 완료")
+        alert("글 작성 완료")
         window.location.replace(`${frontend_base_url}/`);
     }
     else{
@@ -151,12 +155,16 @@ async function handleTransfer(){
 //     }
 // }
 
-// async function getArticles(){
-//     const response = await fetch(`${backend_base_url}/article/` ,{
-//         method:'GET',
-//     })
-
-//     response_json = await response.json()
-//     return response_json
-// }
+async function getArticles(){
+    const response = await fetch(`${backend_base_url}/article/`,{
+        headers:{
+            Authorization: "Bearer " + localStorage.getItem("access"),
+            Accept:"application/json"
+            },
+        method:'GET',
+    }
+    )
+    response_json = await response.json()
+    return response_json
+}
 

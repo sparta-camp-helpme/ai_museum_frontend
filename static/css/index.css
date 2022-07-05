@@ -1,0 +1,272 @@
+html,
+body {
+  position: relative;
+  height: 100%;
+}
+
+body {
+  background: linear-gradient(0.25turn, #32437E, #202A4A, #32437E);
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  color: #000;
+  margin: 0;
+  padding: 0;
+
+}
+
+@font-face {
+    font-family: 'HSBombaram';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/HSBombaram.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    }
+
+    * {
+        font-family: 'HSBombaram';
+    }
+
+
+
+.headertext {
+    font-size: 50px;
+    color: white;
+    margin-left: 50px;
+}
+
+.buttons {
+    position: absolute;
+    right: 60px;
+    top: 15px;
+}
+
+.logoutbutton {
+    border-style: none; 
+    background-color: rgba( 255, 255, 255, 0 );
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+
+}
+
+.mypagebutton {
+    border-style: none; 
+    background-color: rgba( 255, 255, 255, 0 );
+    color: white;
+    font-size: 20px;
+    margin-right: 50px;
+    cursor: pointer;
+}
+
+.swiper {
+  width: 100%;
+  height: 800px;
+  margin-top: 100px;
+}
+
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    border-style: ridge;
+    border-color: navy;
+    border-width:20px 20px 0px 20px;
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+  
+.swiper-slide-img {
+    display: block;
+    width: 100%;
+    height: 600px;
+    object-fit: cover;
+}
+
+.preview {
+    display: block;
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+.modal {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal__overlay {
+    background-color : rgba(0,0,0,0.6);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+.modal__content {
+    background-color: white;
+    padding: 30px 70px;
+    text-align : center;
+    position: relative;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 1000px;
+    height: 680px;
+    box-shadow: 0px 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23)
+}
+
+.hidden {
+    display: none;
+}
+
+
+
+.choosephoto {
+    border: 2px dashed navy;
+    padding: 10px;
+    margin-bottom: 10px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+
+
+textarea {
+    width: 350px;
+    height: 150px;
+    margin-top: 30px;
+    resize: none;
+
+    font-size: 24px;
+  }
+
+.modalbuttons {
+    display: flex;
+    flex-direction: row;
+    margin-top: 30px;
+
+}
+
+.btn-transfer {
+    border: none;
+    font-size: 20px;
+    padding: 7px;
+    background-color: navy;
+    color: white
+}
+
+.btn-transfer-change {
+    border: none;
+    font-size: 20px;
+    padding: 7px;
+    background-color: navy;
+    color: white
+}
+
+.xbutton {
+    border: none;
+    font-size: 20px;
+    padding: 7px;
+    background-color: navy;
+    color: white
+}
+
+.modaltext {
+    margin-bottom: 40px;
+    font-size: 50px;
+}
+
+.upload-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 100%;
+    height: 100%;
+    max-width: 500px;
+    padding: 15px;
+    margin: auto;
+}
+
+/* 드롭다운 */
+.dropdown-label{
+    font-size : 12px;
+    margin : 10px;
+    font-weight : bold;
+    color : rgb(50, 50, 50);
+  }
+  
+  .dropdown{
+    position : relative;
+    display : inline-block;
+  }
+  
+  .dropbtn_icon{
+    font-family : 'Material Icons';
+  }
+  .dropbtn{
+    display : block;
+    border : 2px solid rgb(94, 94, 94);
+    border-radius : 4px;
+    background-color: #fcfcfc;
+    font-weight: 400;
+    color : rgb(124, 124, 124);
+    padding : 12px;
+    width :240px;
+    text-align: left;
+    cursor : pointer;
+    font-size : 12px;
+    z-index :1;
+    position : relative;
+  }
+  .dropdown-content{
+    display : none;
+    font-weight: 400;
+    background-color: #fcfcfc;
+    min-width : 240px;
+    border-radius: 8px;
+    height : 160px;
+    overflow : scroll;
+    box-shadow: 0px 0px 10px 3px rgba(190, 190, 190, 0.6);
+  }
+  .dropdown-content::-webkit-scrollbar{
+    width : 5px;
+    height : 10px;
+  }
+  .dropdown-content::-webkit-scrollbar-thumb{
+    border-radius : 2px;
+    background-color :rgb(194, 194, 194)
+  }
+  
+  .dropdown-content div{
+    display : block;
+    text-decoration : none;
+    color : rgb(37, 37, 37);
+    font-size: 12px;
+    padding : 12px 20px;
+  }
+  .dropdown-content div:hover{
+    background-color: rgb(226, 226, 226);
+  }
+  
+  .dropdown-content.show{
+    display : block;
+  }
