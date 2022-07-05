@@ -38,17 +38,25 @@
         <div class="modal hidden" style="z-index: 3">
             <div class="modal__overlay"></div>
             <div class="modal__content">
-                <div class="photobox" id="photobox">
-                    <label for="pr_photo" id="choosephoto" class="choosephoto" >
-                        사진등록하기
-                    </label>
-                    <input type="file" id="pr_photo" style="display:none"/>
+                <form class="upload-form">
+                    <h1 class="modaltext">Article Create</h1>
+                <div>
+                    <div>
+                        <label for="article_image" id="choosephoto" class="choosephoto" >사진 선택</label>
+                        <input type="file" name="" id="article_image" style="display:none;" onchange="readURL(this);"/>
+                        <img id="preview" class="preview" src="#" alt=""/>
+                    </div>
+                    <div>
+                        <textarea name="" id="article_content" cols="30" class="articletext" rows="10" placeholder="게시글을 작성해보세요!"></textarea>
+                    </div>
 
-                    <img id="preview" class="preview" src="#" alt=""/>
-
-                    <label for="photo" id="submitphoto" class="submitphoto"></label>
                 </div>
-                <button>X</button>
+                </form>
+                <div class="modalbuttons">
+                    <button class="btn-transfer" type="button" id="btn-transfer" onclick="handleTransfer()" style="margin-right:10px">유화 전시</button>
+                    <button class="xbutton">닫기</button>
+                </div>
+
             </div>
         </div>
 

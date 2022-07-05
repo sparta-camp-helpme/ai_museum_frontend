@@ -85,6 +85,18 @@ async function handlelogin() {
 }
 
 
+async function handleLogout(){
+    localStorage.removeItem("access")
+    localStorage.removeItem("refresh")
+    localStorage.removeItem("payload")
+    alert("로그아웃되었습니다.")
+    window.location.replace(`${frontend_base_url}/login.html`);
+}
+
+async function gomypage(){
+    window.location.replace(`${frontend_base_url}/mypage.html`)
+}
+
 async function handleTransfer(){
     
     const result_img = document.getElementById("article_image").files[0]
