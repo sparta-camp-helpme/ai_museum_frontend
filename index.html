@@ -21,8 +21,8 @@
 <body>
     <header>
         <div class="headerwrap">
-            <div>
-                <h1 class="headertext">AI MUSEUM</h1>
+            <div style="padding: 20px">
+                <a style="margin: 33px 0 33px 50px;" href="index.html" class="headertext">AI MUSEUM</a>
             </div>
             <div class="buttons">
                 <button type="button" id="loginout" class="logoutbutton" onclick="handleLogout()">
@@ -41,6 +41,7 @@
             <div class="modal__overlay"></div>
             <div class="modal__content">
 
+                <div style="display: flex; width: 100%;">
                 <form class="upload-form">
                     <div class="modaltext">Article Create</div>
                     <div>
@@ -59,6 +60,28 @@
                     </div>
                 </form>
 
+                <div style="margin: 140px 0 0 0;">
+                <div class="dropdown" id="dropdown">
+                    <!-- <button class="dropbtn" style="text-align: center;">
+                        <span class="dropbtn_icon">Select_Models</span>
+                    </button> -->
+                    <input  class="dropbtn dropbtn_icon" style="text-align: center;" type="text" id="srt">Select_Models</input>
+                    <select style="text-align: center;" class="dropbtn dropdown-content2" id="drop-down">
+                        <option class="drop-down" value="0">candy</option>
+                        <option class="drop-down" value="1">composition_vii</option>
+                        <option class="drop-down" value="2">feathers</option>
+                        <option class="drop-down" value="3">la_muse</option>
+                        <option class="drop-down" value="4">mosaic</option>
+                        <option class="drop-down" value="5">starry_night</option>
+                        <option class="drop-down" value="6">the_scream</option>
+                        <option class="drop-down" value="7">the_wave</option>
+                        <option class="drop-down" value="8">udnie</option>
+                    </select>
+                </div>
+                </div>
+
+            </div>
+
                 <div class="modalbuttons">
                     <button class="btn-transfer" type="button" id="btn-transfer" onclick="handleTransfer()"
                         style="margin-right:10px">유화 전시</button>
@@ -67,26 +90,8 @@
                     <input type="file" name="" id="article_image" style="display:none;" onchange="readURL(this);" />
 
                     <div class="dropdown-label">
-                        Lunch Menus
-                        <span style="font-family: Material Icons;">restaurant</span>
-                    </div>
-                    <div class="dropdown">
-                        <button class="dropbtn">
-                            <span class="dropbtn_icon">more_horiz</span>
-                            <span class="dropbtn_content">Select a menu...</span>
-                            <span class="dropbtn_click"
-                                style="font-family: Material Icons; font-size : 16px; color : #3b3b3b; float:right;"
-                                onclick="dropdown()">arrow_drop_down</span>
-                        </button>
-                        <div class="dropdown-content">
-                            <div class="fastfood" onclick="showMenu(this.innerText)">Burgerking</div>
-                            <div class="fastfood" onclick="showMenu(this.innerText)">Mcdonals</div>
-                            <div class="fastfood" onclick="showMenu(this.innerText)">Lotteria</div>
-                            <div class="fastfood" onclick="showMenu(this.innerText)">Mom's touch</div>
-                            <div class="fastfood" onclick="showMenu(this.innerText)">In n out</div>
-                            <div class="fastfood" onclick="showMenu(this.innerText)">Subway</div>
-                            <div class="fastfood" onclick="showMenu(this.innerText)">Shake shack</div>
-                        </div>
+
+                        <span style="font-family: Material Icons;"></span>
                     </div>
 
                     <button class="xbutton">닫기</button>

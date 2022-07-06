@@ -10,7 +10,7 @@
     }
 
     body{
-        background: url(../static/image/Screenshot_43.png) ;
+        background: url('../images/Screenshot_43.png');
         background-repeat: no-repeat;
         background-size : 100%;
     }

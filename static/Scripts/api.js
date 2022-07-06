@@ -97,15 +97,24 @@ async function gomypage(){
     window.location.replace(`${frontend_base_url}/mypage.html`)
 }
 
+async function run() {
+    document.getElementById("srt").value = document.getElementById("drop-down").value;
+    // const test = document.getElementById("srt").value
+    // console.log(test)
+}
+
 async function handleTransfer(){
     
     const image = document.getElementById("article_image").files[0]
     const content = document.getElementById('article_content').value
+    const number = document.getElementById("drop-down").value
+    console.log(number)
 
     const formdata = new FormData();
 
     formdata.append('image', image)
     formdata.append('content', content)
+    formdata.append('number', number)
 
     const response = await fetch(`${backend_base_url}/article/`,{
         headers:{
@@ -119,6 +128,9 @@ async function handleTransfer(){
         alert("글 작성 완료")
         window.location.replace(`${frontend_base_url}/`);
     }
+    // else if (number == null){
+    //     alert("스타일을 선택해주세요.")
+    // }
     else{
         alert(response.data)
     }
@@ -168,3 +180,46 @@ async function getArticles(){
     return response_json
 }
 
+function articleDetail(article_id){
+    console.log(article_id)
+    const url = `${frontend_base_url}/detail.html?id=${article_id}`
+    location.href=url
+}
+
+
+async function getArticleDetail(article_id){
+    const response = await fetch(`${backend_base_url}/article/${article_id}`,{
+        headers:{
+            Authorization: "Bearer " + localStorage.getItem("access"),
+            Accept:"application/json"
+            },
+        method:'GET',
+    }
+    )
+    response_json = await response.json()
+    console.log(response_json)
+    
+    return response_json
+
+}
+
+async function postComment(article_id, comment_content){
+
+    const commentData = {
+        "comment":comment_content
+    }
+    const response = await fetch(`${backend_base_url}/article/${article_id}/comment`,{
+        Authorization: "Bearer " + localStorage.getItem("access"),
+        Accept:"application/json",
+        method:'POST',
+        body: JSON.stringify(commentData)
+    }
+    )
+
+
+    if (response.status ==200){
+        return response
+    }else{
+        alert(response.status)
+    }
+}

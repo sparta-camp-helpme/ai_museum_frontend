@@ -2,6 +2,7 @@ $(document).ready(function() {
     $('#btn-transfer').hide();
     $('#btn-transfer-change').hide();
     $('#preview').hide();
+    $('#dropdown').hide();
 
     $("#article_image").change(function () {
         readURL(this);
@@ -9,6 +10,7 @@ $(document).ready(function() {
         $("#btn-transfer").show();
         $("#btn-transfer-change").show();
         $('#choosephoto').hide();
+        $('#dropdown').show();
     });
 });
 
@@ -21,9 +23,11 @@ window.onload =async function loadArticles(){
         const articleImage = document.createElement("img");
 
         articleImage.setAttribute("src", `${backend_base_url}${article.image}`)
-        newArticle.setAttribute("id",article.id)
+        articleImage.setAttribute("id",article.id)
         newArticle.setAttribute("class","swiper-slide")
         articleImage.setAttribute("class","swiper-slide-img")
+        articleImage.setAttribute("onclick","articleDetail(this.id)")
+
         // newArticle.innerText = article.content
 
         // 클릭시 모달띄워지게끔

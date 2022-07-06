@@ -10,16 +10,20 @@
     }
 
     body{
-        background: url(../static/image/Screenshot_43.png) ;
+        background: url('../images/Screenshot_43.png') ;
         background-repeat: no-repeat;
-        background-size : 100%;        
+        background-size : 100%;      
+        
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
     }
 
     .starttext {
         position: absolute;
         font-size: 80px;
         color: white;
-        margin: 350px 0px 0px 430px;
+        margin: 500px auto auto auto;
         border-right : .05em solid white;
         animation: cursor 0.5s ease infinite;
         display: table-cell; vertical-align: middle;
@@ -28,7 +32,8 @@
     .startbutton {
         position: absolute ;
          font-size: 30px;
-        margin: 450px 300px 0px 830px;  
+        /* margin: 450px 300px 0px 830px;   */
+        margin: 700px auto auto auto;  
         background-color: #32437E;
         color: white;
         border: 1px solid white; 
@@ -52,6 +57,7 @@
         position: absolute;
         left: 170px;
         top: 150px;
+        /* text-align: center; */
         animation: slide 2s;
         display: none;
     }
@@ -101,8 +107,10 @@
 @keyframes slide {
     from {
         left: -100px;
+        /* top: -0px; */
     }
     to {
         left: 170px;
+        /* bottom: -50px; */
     }
 }
