@@ -14,6 +14,7 @@ if (index > content.length) {
 setInterval(typing, 200)
 
 
+
 $(document).ready(function(){
 $("#loginbox").hide();
     $("#startbutton").click(function(){

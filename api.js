@@ -97,6 +97,14 @@ async function gomypage(){
     window.location.replace(`${frontend_base_url}/mypage.html`)
 }
 
+async function gologin(){
+    window.location.replace(`${frontend_base_url}/login.html`)
+}
+
+async function gojoin(){
+    window.location.replace(`${frontend_base_url}/join.html`)
+}
+
 async function handleTransfer(){
     
     const result_img = document.getElementById("article_image").files[0]
